@@ -58,7 +58,7 @@
 					<!-- Social Icons -->
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="https://www.facebook.com/julio.rodriguezalvarez.5" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
 							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 							<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
@@ -105,44 +105,32 @@
 							<div class="row" >
 								<div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/html5.png" alt="" /></a>
-										<header>
-											<h3>Ipsum Feugiat</h3>
-										</header>
+										<a href="#" class="image fit s2x"><img src="images/html5.png" alt="" /></a>
+										
 									</article>
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/css3.jpg" alt="" /></a>
-										<header>
-											<h3>Rhoncus Semper</h3>
-										</header>
+										<a href="#" class="image fit s2x" ><img src="images/css3.jpg" alt="" /></a>
+										
 									</article>
 								</div>
 								<div class="4u 12u$(mobile)">
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/javascript.png" alt="" /></a>
-										<header>
-											<h3>Magna Nullam</h3>
-										</header>
+										<a href="#" class="image fit s2x"><img src="images/javascript.png" alt="" /></a>
+										
 									</article>
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/jquery.png" alt="" /></a>
-										<header>
-											<h3>Natoque Vitae</h3>
-										</header>
+										<a href="#" class="image fit s2x"><img src="images/jquery.png" alt="" /></a>
+										
 									</article>
 								</div>
 								<div class="4u$ 12u$(mobile)">
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/bootstrap.png" alt="" /></a>
-										<header>
-											<h3>Dolor Penatibus</h3>
-										</header>
+										<a href="#" class="image fit s2x"><img src="images/bootstrap.png" alt="" /></a>
+										
 									</article>
 									<article class="item">
-										<a href="#" class="image fit" id="s2x"><img src="images/mat.png" alt="" /></a>
-										<header>
-											<h3>Orci Convallis</h3>
-										</header>
+										<a href="#" class="image fit s2x"><img src="images/mat.png" alt="" /></a>
+										
 									</article>
 								</div>
 							</div>
@@ -178,21 +166,46 @@
 								<h2>Contact</h2>
 							</header>
 
-							<p>Elementum sem parturient nulla quam placerat viverra
-							mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia
-							donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc
-							orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>
-
-							<form method="post" action="http://www.swolebrain.com:4003/email" id="miformulario" onsubmit="event.preventDefault()">
+							<p>For information about my work you can contact me and we can have a chat about your intres issues .</p>
+                            
+                            <script>
+                                function verification (){
+                                    var valor = document.getElementById("nom").value;
+                                    if( !valor  || valor.length == 0 
+                                       || /^\s+$/.test(valor) || !(/^[\w'\s]+$/.test(valor))) {
+                                        alert("Enter a correct Name");
+                                        return false;
+                                    }
+                                    
+                                    var tel = document.getElementById("tele").value;
+                                    if( !(/^\({0,1}[0-9]{3}\){0,1}[-. ]{0,1}[0-9]{3}[-. ]{0,1}[0-9]{4}$/.test(tel)) ) {
+                                        alert("Enter valid Phone - "+tel+" is not valid.");
+                                        return false;
+                                    }
+                                    
+                                    var em = document.getElementById("correo").value;
+                                    if( !( /^\w[\w0-9.-]+@\w+[-.\w]+.\w{2,4}$/.test(em)) ) {
+                                        alert("Enter a valid Email");
+                                        return false;
+                                    }
+                                    return true;
+                            
+                                }
+                                
+                            </script>
+                            
+							<form method="post" action="http://www.swolebrain.com:4003/email" id="miformulario" onsubmit="event.preventDefault()" name="contactForm">
 								<div class="row">
-									<div class="6u 12u$(mobile)"><input type="text" name="full_name" placeholder="Name" /></div>
-									<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>
+									<div class="4u 12u$(mobile)"><input id="nom" type="text" name="full_name" placeholder="Name" /></div>
+									<div class="4u 12u$(mobile)"><input id="tele" type="text" name="phone" placeholder="Phone" /></div>
+                                    <div class="4u$ 12u$(mobile)"><input id="correo" type="text" placeholder="Email"  name="email"/></div>
 									<div class="12u$">
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
 									<input type="hidden" name="dest_email" value="julio181184@gmail.com">
                                     <div class="12u$">
-                                        <button type="submit1" value="Send Message" onclick="submitForm()"; >send</button>
+                                        <button class="waves-effect waves-light btn" type="submit1" value="Send Message" onclick="submitForm();" id="quitate" >Submit</button><div id="tex" class="hidden"></div>
+                            
 									</div>
 								</div>
 							</form>
@@ -207,7 +220,7 @@
 
 				<!-- Copyright -->
 					<ul class="copyright">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 					</ul>
 
 			</div>
@@ -222,11 +235,18 @@
 			<script src="assets/js/main.js"></script>
             <script>
             function FuncionExito(b) {
+                $("#tex").html("Your message was sent correctly.");
                 console.log(b);
             }
             function submitForm(e){
                 //e.preventDefault();
-                $.post("http://www.swolebrain.com:4003/email", $( "#miformulario" ).serialize(), FuncionExito);
+                if (verification() ){
+                    $("#quitate").addClass("hidden");
+                    $("#tex").removeClass("hidden")
+                    
+                    $.post("http://www.swolebrain.com:4003/email", $( "#miformulario" ).serialize(), FuncionExito);
+                }
+                
             }
             </script>
 
